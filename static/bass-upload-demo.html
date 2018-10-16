@@ -1,0 +1,63 @@
+<style>
+img{
+    max-width: 600px;
+}
+</style>
+
+<input id="inputfile" type="file"/>
+<button onclick="uploadImage('#inputfile')">上传图片</button>
+<br>
+<img id="demoimg1">
+<img id="demoimg2">
+
+<script>
+let $img1 = document.querySelector('#demoimg1');
+let $img2 = document.querySelector('#demoimg2');
+
+function uploadImage(fileInputSelector) {
+    let file = document.querySelector(fileInputSelector).files[0];
+    let reader = new FileReader(), imgdata;
+
+    reader.onload = function (e) {
+        imgdata = e.target.result;
+        $img1.src = imgdata;
+        _upload(imgdata);
+    }
+
+    reader.readAsDataURL(file);
+
+    function _upload(imgdata) {
+        // https://baas.browser.qq.com/activity/functions/upload_pic
+        // https://baas.sparta.html5.qq.com/activity/functions/upload_pic
+        fetch('https://baas.browser.qq.com/activity/functions/upload_pic', {
+            method: 'POST',
+            body: JSON.stringify({
+                fileContent: imgdata.replace(/^data:\w+?\/\w+?\;base64\,/, ''),
+                fileName: file.name.replace(/\.\w+$/,''),
+                fileType: file.type.replace(/^image\//, ''),
+                _t: Date.now()
+            }),
+            headers: {
+                'content-type': 'application/json'
+            },
+        })
+        .then(function (res) { return res.json() } )
+        .catch(function (err) { console.error('Error:', err) } )
+        .then(function (res) {
+            if (res.error) {
+                console.error('Error', res)
+                return;
+            } 
+            
+            const result = res.result;
+            if (result.ret_code && result.ret_code === 200) {
+                console.log('Success:', res)
+                let cdnurl = result.cdn_url.split('|')
+                $img2.src = cdnurl[0]
+            } else {
+                console.log(result)
+            }
+        });
+    }
+}
+</script>
