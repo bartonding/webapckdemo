@@ -6,7 +6,10 @@ class WebpackCompilerHooks {
     this.webpackCompilationHooks = new WebpackCompilationHooks()
   }
   // ================================================================
-  
+  beforeRun(compiler, callback) {
+    console.log('...............................')
+    callback()
+  }
   // ================================================================
   apply(compiler) {
     this.tappingHoooks(compiler, [

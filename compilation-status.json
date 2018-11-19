@@ -1,0 +1,294 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.20.2",
+  "hash": "d07ee666c211b58766b7",
+  "time": 133,
+  "builtAt": 1539923144526,
+  "publicPath": "/",
+  "outputPath": "D:\\gitws\\demo\\webpack\\dist",
+  "assetsByChunkName": {
+    "app": "app.bundle.js"
+  },
+  "assets": [
+    {
+      "name": "app.bundle.js",
+      "size": 4848,
+      "chunks": [
+        "app"
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app": {
+      "chunks": [
+        "app"
+      ],
+      "assets": [
+        "app.bundle.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "app": {
+      "chunks": [
+        "app"
+      ],
+      "assets": [
+        "app.bundle.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": "app",
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 379,
+      "names": [
+        "app"
+      ],
+      "files": [
+        "app.bundle.js"
+      ],
+      "hash": "ca30afaa9d9f7c334aab",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "./src/a.js",
+          "identifier": "D:\\gitws\\demo\\webpack\\src\\a.js",
+          "name": "./src/a.js",
+          "index": 1,
+          "index2": 0,
+          "size": 251,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "app"
+          ],
+          "issuer": "D:\\gitws\\demo\\webpack\\src\\index.js",
+          "issuerId": "./src/index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": "./src/index.js",
+              "identifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+              "name": "./src/index.js",
+              "profile": {
+                "factory": 66,
+                "building": 14
+              }
+            }
+          ],
+          "profile": {
+            "factory": 3,
+            "building": 3
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./src/index.js",
+              "moduleIdentifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./a",
+              "loc": "3:0-19"
+            },
+            {
+              "moduleId": "./src/index.js",
+              "moduleIdentifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./a",
+              "loc": "5:12-13"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "console.log('a.js 3')\r\n// let div = document.createElement('h1')\r\n// div.innerHTML = '12345678'\r\n// document.body.appendChild(div)\r\n\r\nmodule.exports = () => {\r\n    return 'hello world 1012345'\r\n}\r\n\r\n// if(module.hot){\r\n//     module.hot.accept()\r\n// }"
+        },
+        {
+          "id": "./src/index.js",
+          "identifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 1,
+          "size": 128,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "app"
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "profile": {
+            "factory": 66,
+            "building": 14
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "app"
+            }
+          ],
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "// const a = require('./a')\r\n// import './index.css'\r\nimport a from './a'\r\nconsole.log('index.js 9123456')\r\nconsole.log(a())\r\n\r\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "app",
+          "request": "./src/index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "./src/a.js",
+      "identifier": "D:\\gitws\\demo\\webpack\\src\\a.js",
+      "name": "./src/a.js",
+      "index": 1,
+      "index2": 0,
+      "size": 251,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "app"
+      ],
+      "issuer": "D:\\gitws\\demo\\webpack\\src\\index.js",
+      "issuerId": "./src/index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": "./src/index.js",
+          "identifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "factory": 66,
+            "building": 14
+          }
+        }
+      ],
+      "profile": {
+        "factory": 3,
+        "building": 3
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./src/index.js",
+          "moduleIdentifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./a",
+          "loc": "3:0-19"
+        },
+        {
+          "moduleId": "./src/index.js",
+          "moduleIdentifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "./a",
+          "loc": "5:12-13"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "console.log('a.js 3')\r\n// let div = document.createElement('h1')\r\n// div.innerHTML = '12345678'\r\n// document.body.appendChild(div)\r\n\r\nmodule.exports = () => {\r\n    return 'hello world 1012345'\r\n}\r\n\r\n// if(module.hot){\r\n//     module.hot.accept()\r\n// }"
+    },
+    {
+      "id": "./src/index.js",
+      "identifier": "D:\\gitws\\demo\\webpack\\src\\index.js",
+      "name": "./src/index.js",
+      "index": 0,
+      "index2": 1,
+      "size": 128,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "app"
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "profile": {
+        "factory": 66,
+        "building": 14
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src/index.js",
+          "loc": "app"
+        }
+      ],
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "// const a = require('./a')\r\n// import './index.css'\r\nimport a from './a'\r\nconsole.log('index.js 9123456')\r\nconsole.log(a())\r\n\r\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

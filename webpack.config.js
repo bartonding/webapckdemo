@@ -1,8 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const WebpackCompilerHooks = require('./plugin/compiler.hooks')
-const WebpackCompilationHooks = require('./plugin/compilation.hooks')
+// const WebpackCompilerHooks = require('./plugin/compiler.hooks')
+// const WebpackCompilationHooks = require('./plugin/compilation.hooks')
+const ChildCompilationPlugin = require('./plugin/child.compilation')
+
 
 module.exports = {
     context: __dirname,
@@ -37,10 +39,11 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new ChildCompilationPlugin()
         // new HtmlWebpackPlugin({
         //     title: 'Development'
         // }),
-        new WebpackCompilerHooks(),
+        // new WebpackCompilerHooks(),
         // new WebpackCompilationHooks()
     ]
 };

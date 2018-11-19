@@ -1,9 +1,22 @@
+const path = require('path')
 const webpack = require('webpack')
-const webpackconfig = require('./webpack.config')
+const WebpackCompilerHooks = require('./plugin/compiler.hooks')
+let webpackconfig = require('./webpack.config')
 
+// webpackconfig = {
+//     // mode: 'development',
+//     context: __dirname,
+//     // output: {
+//     //     path: path.resolve(__dirname, 'dist'),
+//     // },
+//     plugins: [
+//         new WebpackCompilerHooks()
+//     ]
+// }
+// console.log(webpackconfig)
 const compiler = webpack(webpackconfig)
 
-compiler.run((err, stats) => {
+const watching = compiler.watch({}, (err, stats) => {
     if (err || stats.hasErrors()) {
         console.log('~~~~~~ error', err)
         return;

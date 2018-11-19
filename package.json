@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "test": "webpack",
-    "testw": "webpack -w"
+    "testw": "webpack -w",
+    "profile": "webpack --profile --json > compilation-status.json"
   },
   "author": "",
   "license": "ISC",
