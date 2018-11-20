@@ -1,3 +1,4 @@
+const path = require('path')
 const SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin');
 
 class ChildCompilationPlugin {
@@ -8,15 +9,25 @@ class ChildCompilationPlugin {
     // To make child compiler work, you have to have a entry in the file system
     this.compilationEntry = './src/pages/index.html';
   }
+  
+  getFullPath(context) {
+    let entry = this.compilationEntry;
+    return 'file-loader?name=[name].[ext]'
+      + '!' + path.resolve(context, entry)
+  }
 
   apply(compiler) {
     let self = this;
+    this.compilationEntry = this.getFullPath(compiler.context);
     // Listen to `make` event
     compiler.hooks.make.tapAsync(self.childCompilerName, (compilation, callback) => {
       // Creating child compiler with params
-      const childCompiler = compilation.createChildCompiler(this.childCompilerName, {
-        filename: this.outputFileName
-      });
+      const childCompiler = compilation.createChildCompiler(
+        this.childCompilerName, 
+        {
+          filename: this.outputFileName
+        }
+      );
 
       // Everyone plugin does this, I don't know why
       childCompiler.context = compiler.context;
